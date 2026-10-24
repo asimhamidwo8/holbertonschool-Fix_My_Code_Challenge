@@ -1,19 +1,18 @@
 #!/usr/bin/python3
 import sys
 
-if len(sys.argv) > 1:
-    n = int(sys.argv[1])
-else:
-    n = 15
+n = int(sys.argv[1]) if len(sys.argv) > 1 else 15
+
+result = []
 
 for i in range(1, n + 1):
-    if i % 3 == 0 and i % 5 == 0:
-        print("FizzBuzz", end=" ")
+    if i % 15 == 0:
+        result.append("FizzBuzz")
     elif i % 3 == 0:
-        print("Fizz", end=" ")
+        result.append("Fizz")
     elif i % 5 == 0:
-        print("Buzz", end=" ")
+        result.append("Buzz")
     else:
-        print(i, end=" ")
+        result.append(str(i))
 
-print()
+print(" ".join(result))
